@@ -6,11 +6,11 @@ Setup:
 ```
 \curl -sSL https://get.rvm.io | bash -s stable --ruby=2.4 --with-gems="bundler"
 ```
+- Clone the repository
 - Install all required gems
 ```
 bundle install
 ```
-- Clone the repository
 
 
 ### 1. Programming
