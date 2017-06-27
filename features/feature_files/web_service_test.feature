@@ -4,11 +4,21 @@ Feature:
   So that I can potentially land a job
 
   @soap
-  Scenario Outline: Retrive a UK location from a county
+  Scenario Outline: Retrive a UK location from a county, and confirm town
     Given I retrieve the UK county <county>
-    Then the result should contain <sz>
+    Then the result should contain town <town>
     Examples:
-      | county         | sz        |
+      | county         | town      |
       | London         | Greenwich |
       | Merseyside     | Liverpool |
       | Leicestershire | Medbourne |
+
+  @soap
+  Scenario Outline: Retrive a UK location from a county, and confirm postcode
+    Given I retrieve the UK county <county>
+    Then the result should contain postcode <postcode>
+    Examples:
+      | county     | postcode |
+      | London     | SW6      |
+      | Merseyside | L12      |
+      | Manchester | M17      |
