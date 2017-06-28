@@ -25,10 +25,10 @@ Then (/^the heading of the search results page should match (.*)$/) do |input|
 end
 
 Then (/^the search results page should be available in (.*)$/) do |language|
-  lang_link = @browser.link(:xpath => "//div[@id='p-lang']//a[contains(@class, 'interlanguage-link-target') and text()='#{language}']")
+  @lang_link = @browser.link(:xpath => "//div[@id='p-lang']//a[contains(@class, 'interlanguage-link-target') and text()='#{language}']")
+  expect(@lang_link).not_to be nil
 end
 
 When (/^I click on the link to view the article in (.*)$/) do |language|
-  lang_link = @browser.link(:xpath => "//div[@id='p-lang']//a[contains(@class, 'interlanguage-link-target') and text()='#{language}']")
-  lang_link.click
+  @weblang_link.click
 end
